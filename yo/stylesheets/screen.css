@@ -17,3 +17,10 @@ h1 {
 body {
   text-align: center;
 }
+
+/* line 19, ../sass/screen.sass */
+p {
+  font-size: 20px;
+  font-family: helvetica;
+  font-weight: 100;
+}

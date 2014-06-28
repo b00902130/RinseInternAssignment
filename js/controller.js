@@ -10,6 +10,8 @@ function TodoCrtlUpdate($scope) {
   }
   $scope.finishItem = function(item){
       item.isFinish = true;
+      localStorage.finishedItems = JSON.stringify(item);
+
   }
   $scope.edit = function(item){
       item.editing = true;
@@ -25,5 +27,7 @@ function TodoCrtlUpdate($scope) {
 
   $scope.deleteItem = function(item){
     item.isDelete = true;
+    localStorage.deletedItems = JSON.stringify(item);
+
   }
 }
