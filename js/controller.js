@@ -4,6 +4,7 @@ function TodoCrtlUpdate($scope) {
   $scope.addItem = function(){
     if(this.newItem){
        this.todoList.push({label:this.newItem, isFinish:false});
+       localStorage.todoItems = JSON.stringify(this.newItem);
        this.newItem = "";
     }
   }
