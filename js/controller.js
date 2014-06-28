@@ -3,12 +3,12 @@ function TodoCrtlUpdate($scope) {
   $scope.todoList = [];
   $scope.addItem = function(){
     if(this.newItem){
-       this.todoList.push({label:this.newItem, isFinish:false});
+       this.todoList.push({label:this.newItem, isFinish:false, isDelete:false});
        localStorage.todoItems = JSON.stringify(this.newItem);
        this.newItem = "";
     }
   }
-  $scope.removeItem = function(item){
+  $scope.finishItem = function(item){
       item.isFinish = true;
   }
   $scope.edit = function(item){
@@ -21,5 +21,9 @@ function TodoCrtlUpdate($scope) {
 
   $scope.hello = function(){
     alert('Hello!' + item.label);
+  }
+
+  $scope.deleteItem = function(item){
+    item.isDelete = true;
   }
 }
