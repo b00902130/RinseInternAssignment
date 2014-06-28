@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">  
+    <title>RinseTodoListAssignment</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
+    <link rel="stylesheet" href="yo/stylesheets/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="yo/stylesheets/screen.css">
+
+  </head>
+  <body ng-controller="TodoCrtlUpdate">
+      <h1>Rinse Assignment Todo List</h1>
+      <form ng-submit="addItem()">
+        <input class="form-control" type="text" ng-model="newItem" name="newItem" placeholder="TODO Thing" />
+        <input class="btn btn-info" type="submit" id="submit" value="Add" />
+      </form>
+      <div id="todo">
+        <div ng-repeat="item in todoList | filter:{isFinish:false}">
+          <div ng-hide="item.editing"><span ng-dblclick="edit(item)"><p class="bg-warning"><input class="checkbox" type="checkbox" ng-click="removeItem(item)">{{item.label }}</p></span></div>
+          <div ng-show="item.editing"><input type="text" value="{{item.label }}" ng-model="item.label"><button ng-click="save(item)">Save</button></div>
+        </div>
+      </div>
+
+      <hr>
+
+      <h1>Finished!</h1>  
+      <div id="finish">
+        <div ng-repeat="item in todoList | filter:{isFinish:true}">
+          <p class="bg-success">{{item.label}}</p>
+        </div>
+      </div>
+  </body>
+</html>
