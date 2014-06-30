@@ -8,7 +8,8 @@ Todo區和Finished區，而deleted的item不會顯示出來。
 放在Todo區的item，可以藉由click pin icon來標註為完成，點完便會跑進Finished區。
 而Todo區和Finished區的右邊皆有兩個icon，可點按刪除(delete)和修改(edit)。
 
-
+新增兩個button，一個用alert查看local storage，另一個清空所有資料。
+-----------------------------------------------------------
 
 ### Local Storage
 
