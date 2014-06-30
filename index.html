@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="yo/stylesheets/screen.css">
 
   </head>
-  <body ng-controller="TodoCrtlUpdate">
+  <body ng-controller="TodoController">
       <h1>Rinse Assignment Todo List</h1>
       <form ng-submit="addItem()">
-        <input class="form-control" type="text" ng-model="newItem" name="newItem" placeholder="TODO Thing" />
+        <input class="form-control" type="text" ng-model="newItem" name="newItem" placeholder="Input your todo things" />
         <input class="btn btn-warning" type="submit" id="submit" value="Add" />
       </form>
       <h1>Todo!</h1>
