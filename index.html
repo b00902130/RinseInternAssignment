@@ -29,9 +29,10 @@
       <form ng-submit="addItem()">
         <input class="form-control" type="text" ng-model="newItem" name="newItem" placeholder="Input your todo things" />
         <input class="btn btn-warning" type="submit" id="submit" value="Add" />
+        <button class="queryLocalStorage btn btn-primary" ng-click="queryLocalStorage()">local storage</button>
+        <button class="btn btn-danger" ng-click="clearLocalStorageAndTodoList()">clear</button>
       </form>
-      <button class="queryLocalStorage btn btn-primary" ng-click="queryLocalStorage()">local storage</button>
-      <button class="btn btn-danger" ng-click="clearLocalStorageAndTodoList()">clear</button>
+      
       <h1>Todo!</h1>
       <div id="todo">
         <div ng-repeat="item in todoList | filter:{isFinish:false, isDelete:false}">
