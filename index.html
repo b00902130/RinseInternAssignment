@@ -4,12 +4,27 @@
     <meta charset="utf-8">  
     <title>RinseTodoListAssignment</title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/jquery.modal.js" type="text/javascript"></script>
+    <script src="js/jquery.modal.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="yo/stylesheets/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="yo/stylesheets/jquery.modal.css" type="text/css" media="screen" />
+
     <link rel="stylesheet" href="yo/stylesheets/screen.css">
 
   </head>
   <body ng-controller="TodoController">
+      <div id="welcomeModal" style="display:none;">
+        <p>Welcome to the todo list.</p>
+        <p>You can input your task by clicking Add button or pressing enter key.</p>
+        <p>If you have done your tasks, you can click the pin icon to move them to finished region.</p>
+        <p>If wanna delete the tasks, click the trash can icon.</p>
+        <p>If wanna edit the tasks, click the cog icon.</p>
+        <p>Good Luck!</p>
+      </div>
       <h1>Rinse Assignment Todo List</h1>
       <form ng-submit="addItem()">
         <input class="form-control" type="text" ng-model="newItem" name="newItem" placeholder="Input your todo things" />
@@ -40,5 +55,7 @@
           <div ng-show="item.editing"><input class="form-control" type="text" value="{{item.label }}" ng-model="item.label"><button class="btn btn-info" ng-click="save(item)">Save</button></div>
         </div>
       </div>
+      <hr>
+      
   </body>
 </html>

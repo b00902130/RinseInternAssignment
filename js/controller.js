@@ -76,5 +76,7 @@ function TodoController($scope) {
     localStorage.clear();
     this.todoList = [];
   }
-
 }
+
+
+

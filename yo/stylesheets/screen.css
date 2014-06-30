@@ -62,3 +62,10 @@ p {
   width: 300px;
   display: inline;
 }
+
+/* line 55, ../sass/screen.sass */
+#welcomeModal {
+  width: 60%;
+  height: 50%;
+  overflow: auto;
+}
