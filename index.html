@@ -17,13 +17,13 @@
       </form>
       <h1>Todo!</h1>
       <div id="todo">
-        <div ng-repeat="item in todoList | filter:{isFinish:false}">
-          <div ng-hide="item.editing">
+        <div ng-repeat="item in todoList | filter:{isFinish:false, isDelete:false}">
+          <div>
             <div class="item">
-              <p class="bg-info" ><span class="glyphicon glyphicon-pushpin" ng-click="finishItem(item)"></span>{{item.label }}<span class="glyphicon glyphicon-cog" ng-click="edit(item)"></span></p>
+              <p class="bg-info" ><span class="glyphicon glyphicon-pushpin" ng-click="finishItem(item)"></span>{{item.label }}<span class="glyphicon glyphicon-cog" ng-click="edit(item)"></span><span class="glyphicon glyphicon-trash" ng-click="deleteItem(item)"></span></p>
             </div>
           </div>
-          <div ng-show="item.editing"><input type="text" value="{{item.label }}" ng-model="item.label"><button ng-click="save(item)">Save</button></div>
+          <div ng-show="item.editing"><input class="form-control" type="text" value="{{item.label }}" ng-model="item.label"><button class="btn btn-info" ng-click="save(item)">Save</button></div>
         </div>
       </div>
 
@@ -33,8 +33,9 @@
       <div id="finish">
         <div ng-repeat="item in todoList | filter:{isFinish:true, isDelete:false}">
           <div class="finishedItem">
-            <p class="bg-success" ng-click="deleteItem(item)"><span class="glyphicon glyphicon-ok"></span>{{item.label}}<span class="glyphicon glyphicon-trash"></span></p>
+            <p class="bg-success" ><span class="glyphicon glyphicon-ok"></span>{{item.label}}<span class="glyphicon glyphicon-cog" ng-click="edit(item)"></span><span class="glyphicon glyphicon-trash" ng-click="deleteItem(item)"></span></p>
           </div>
+          <div ng-show="item.editing"><input class="form-control" type="text" value="{{item.label }}" ng-model="item.label"><button class="btn btn-info" ng-click="save(item)">Save</button></div>
         </div>
       </div>
   </body>
