@@ -19,7 +19,9 @@
       <div id="todo">
         <div ng-repeat="item in todoList | filter:{isFinish:false}">
           <div ng-hide="item.editing">
-            <span ng-dblclick="edit(item)"><p class="bg-info" ng-click="finishItem(item)"><span class="glyphicon glyphicon-pushpin"></span>{{item.label }}</p></span>
+            <div class="item">
+              <p class="bg-info" ><span class="glyphicon glyphicon-pushpin" ng-click="finishItem(item)"></span>{{item.label }}<span class="glyphicon glyphicon-cog" ng-click="edit(item)"></span></p>
+            </div>
           </div>
           <div ng-show="item.editing"><input type="text" value="{{item.label }}" ng-model="item.label"><button ng-click="save(item)">Save</button></div>
         </div>
@@ -30,7 +32,9 @@
       <h1>Finished!</h1>  
       <div id="finish">
         <div ng-repeat="item in todoList | filter:{isFinish:true, isDelete:false}">
-          <p class="bg-success" ng-click="deleteItem(item)"><span class="glyphicon glyphicon-ok"></span>{{item.label}}</p>
+          <div class="finishedItem">
+            <p class="bg-success" ng-click="deleteItem(item)"><span class="glyphicon glyphicon-ok"></span>{{item.label}}<span class="glyphicon glyphicon-trash"></span></p>
+          </div>
         </div>
       </div>
   </body>

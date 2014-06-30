@@ -24,3 +24,42 @@ p {
   font-family: helvetica;
   font-weight: 100;
 }
+
+/* line 26, ../sass/screen.sass */
+.item {
+  width: 300px;
+  display: inline;
+}
+
+/* line 31, ../sass/screen.sass */
+.glyphicon-pushpin {
+  float: left;
+  position: relative;
+  margin-left: 20%;
+}
+
+/* line 36, ../sass/screen.sass */
+.glyphicon-cog {
+  float: right;
+  position: relative;
+  margin-right: 20%;
+}
+
+/* line 41, ../sass/screen.sass */
+.glyphicon-ok {
+  float: left;
+  margin-left: 20%;
+}
+
+/* line 46, ../sass/screen.sass */
+.glyphicon-trash {
+  float: right;
+  position: relative;
+  margin-right: 20%;
+}
+
+/* line 51, ../sass/screen.sass */
+.finishedItem {
+  width: 300px;
+  display: inline;
+}
