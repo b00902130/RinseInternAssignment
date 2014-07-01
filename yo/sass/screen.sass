@@ -9,6 +9,29 @@
 	width: 30%
 	// text-align: center
 	display: inline
+#animateThird
+	-webkit-animation-duration: 1s
+	-webkit-animation-delay: 0.2s
+	// -vendor-animation-iteration-count: infinite
+#animateOne
+	-webkit-animation-duration: 1s
+	-webkit-animation-delay: 0.4s
+	// -vendor-animation-iteration-count: infinite
+#animateSecond
+	-webkit-animation-duration: 1s
+	-webkit-animation-delay: 0.6s
+	// -vendor-animation-iteration-count: infinite
+.navTop
+	// position: absolute
+	// float: right
+	margin-bottom: 0px
+	margin: 0px
+	display: block
+
+.title
+	// margin-left: 1000px
+	// // position: absolute
+	// text-align: center
 
 h1
 	font-weight: 100
@@ -23,16 +46,29 @@ p
 	font-weight: 100
 	// span
 	// 	text-align: right
-
+.todoTitle
+	font-size: 36px
+	font-weight: 100
+	line-weight: 1.1
+	margin: 5px
 .item
 	width: 300px
 	display: inline
+
+.animate-enter
+	-webkit-transition: 1s linear all
+	transition: 1s linear all
+	opacity: 0
+
+ 
+.animate-enter.animate-enter-active
+	opacity: 1
 
 
 .glyphicon-pushpin
 	float: left
 	position: relative
-	margin-left: 20%
+	margin-left: 23%
 
 .glyphicon-cog
 	float: right
@@ -41,7 +77,7 @@ p
 
 .glyphicon-ok
 	float: left
-	margin-left: 20%
+	margin-left: 23%
 
 
 .glyphicon-trash

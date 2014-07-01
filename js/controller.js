@@ -1,5 +1,6 @@
 function TodoController($scope) {
   $scope.newItem = "";
+  $scope.isAnimate = false;
   if(localStorage.todoItems === undefined){
     $scope.todoList = [];
   }else{
@@ -8,17 +9,26 @@ function TodoController($scope) {
   $scope.finishedArray = [];
   $scope.deletedArray = [];
   $scope.localStorageTodoLabelArray = [];
-  // for(var i=0; i<this.todoList.length; i++){
+  $(document).ready(function(){
 
-  //   if(this.todoList[i].isFinish === true && this.todoList[i].isDelete != true){
-  //     this.finishedArray.push(this.todoList[i]);
-  //   }
-  //   if(this.todoList[i].isDelete === true){
-  //     this.deletedArray.push(this.todoList[i]);
-  //   }
-  // }
-  // localStorage.finishedItems = JSON.stringify(this.finishedArray);
-  // localStorage.deletedItems = JSON.stringify(this.deletedArray);
+    $('#animateOne').addClass('animated bounceInLeft');
+
+    $('#animateSecond').delay(5200).addClass('animated bounceInLeft');
+    $('#animateThird').addClass('animated bounceInLeft');
+    return false;
+  });
+
+  $scope.sleep1 = function(milliseconds){
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
+
+  $scope.aniTitle = function(){
+  }
   $scope.addItem = function(){
     if(this.newItem){
        this.todoList.push({label:this.newItem, isFinish:false, isDelete:false});
@@ -91,6 +101,15 @@ function TodoController($scope) {
   $scope.clearLocalStorageAndTodoList = function(){
     localStorage.clear();
     this.todoList = [];
+  }
+
+  $scope.intro = function(){
+    $('#welcomeModal').modal({
+      fadeDuration: 200
+    });
+    // alert('RRR');
+    // $('#animateOne').addClass('animated bounceInLeft');
+
   }
 }
 
