@@ -99,8 +99,10 @@ function TodoController($scope) {
 
   }
   $scope.clearLocalStorageAndTodoList = function(){
-    localStorage.clear();
-    this.todoList = [];
+    if(confirm('Sure to clear all?')){
+      localStorage.clear();
+      this.todoList = [];
+    }
   }
 
   $scope.intro = function(){
